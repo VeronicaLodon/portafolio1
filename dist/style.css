@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+:root {
+  --black-color: #101117;
+  --white-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  background: linear-gradient(
+    to right,
+    #fbfaff 0%,
+    40%,
+    #fbfaff 80%,
+    90%,
+    #ecf0fb 100%
+  );
+  color: var(--black-color);
+  font-size: 1rem; /* Usa unidades relativas */
+  line-height: 1.3;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.mouse-effect {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.circle {
+  position: absolute;
+  background-color: var(--black-color);
+  width: 0.625rem; /* 10px convertido a rem */
+  height: 0.625rem;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  z-index: 111111;
+  user-select: none;
+  pointer-events: none;
+  transition: all 0.05s;
+}
+
+.circle-follow {
+  position: absolute;
+  border: 1px solid var(--black-color);
+  width: 2.5rem; /* 40px convertido a rem */
+  height: 2.5rem;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  z-index: 111111;
+  user-select: none;
+  pointer-events: none;
+  transition: all 0.1s;
+}
+
+.main-txt {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: -0.25rem; /* -4px convertido a rem */
+  font-size: 10vw; /* Tamaño relativo al ancho de la pantalla */
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.897);
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem; /* 16px y 20px convertidos a rem */
+}
+
+.header-inner .navbar-brand {
+  font-size: 2.625rem; /* 42px convertido a rem */
+  font-weight: 900;
+  letter-spacing: -0.0625rem; /* -1px convertido a rem */
+  text-transform: uppercase;
+  color: var(--black-color);
+  text-decoration: none;
+}
+
+/* Consultas de medios para pantallas pequeñas */
+@media (max-width: 768px) {
+  .main-txt {
+    font-size: 8vw; /* Reduce el tamaño del texto principal */
+    letter-spacing: -0.2rem; /* Ajusta el espaciado */
+  }
+
+  .header-inner .navbar-brand {
+    font-size: 2rem; /* Reduce el tamaño del texto del encabezado */
+  }
+
+  .circle {
+    width: 0.5rem; /* Ajusta el tamaño del círculo */
+    height: 0.5rem;
+  }
+
+  .circle-follow {
+    width: 2rem; /* Ajusta el tamaño del círculo de seguimiento */
+    height: 2rem;
+  }
+}
+
+/* Consultas de medios para pantallas muy pequeñas (teléfonos) */
+@media (max-width: 480px) {
+  .main-txt {
+    font-size: 6vw; /* Reduce aún más el tamaño del texto principal */
+    letter-spacing: -0.15rem;
+  }
+
+  .header-inner .navbar-brand {
+    font-size: 1.5rem; /* Reduce el tamaño del texto del encabezado */
+  }
+
+  .header-inner {
+    padding: 0.75rem 1rem; /* Reduce el padding del encabezado */
+  }
+}
