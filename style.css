@@ -15,14 +15,19 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   padding: 20px;
 }
 
 .card {
   max-width: 340px;
+  width: 340px;
   margin: auto;
-  overflow-y: auto;
+  overflow-y:auto;
+  transform: scale(1);
+  transform-origin: center;
   position: relative;
   z-index: 1;
   overflow-x: hidden;
@@ -403,31 +408,4 @@ body {
 /* Clase para hacer visible la tarjeta */
 .card.visible {
   opacity: 1;
-}
-/* === ESTILOS DEL CURSOR === */
-.mouse-effect {
-  opacity: 0;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.circle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: #101117;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s;
-}
-
-.circle-follow {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #101117;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 0.3s;
 }
