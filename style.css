@@ -409,3 +409,84 @@ body {
 .card.visible {
   opacity: 1;
 }
+/* Añade esto al final de tu CSS existente */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    display: block;
+    min-height: 100vh;
+    height: auto;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 90vh; /* Ocupa casi toda la altura de la pantalla */
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .card[data-state="#about"] {
+    height: auto;
+    min-height: 90vh;
+  }
+  
+  .card[data-state="#contact"] {
+    height: auto;
+    min-height: 70vh;
+  }
+  
+  .card[data-state="#experience"] {
+    height: auto;
+    min-height: 90vh;
+  }
+  
+  .card-header {
+    height: 180px; /* Mantiene buena proporción para móviles */
+  }
+  
+  .card-cover {
+    height: 140px;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+  
+  /* Asegura que el contenido no quede muy pegado a los bordes */
+  .card-main {
+    padding-bottom: 20px;
+  }
+  
+  /* Mejora los botones para pantallas táctiles */
+  .card-buttons button {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+}
+
+/* Para pantallas muy pequeñas (ej. smartphones pequeños) */
+@media (max-width: 480px) {
+  .card-header {
+    height: 160px;
+  }
+  
+  .card-cover {
+    height: 120px;
+  }
+  
+  .card-fullname {
+    font-size: 20px;
+  }
+  
+  .card-jobtitle {
+    font-size: 11px;
+  }
+  
+  .card-desc {
+    font-size: 14px; /* Un poco más grande para mejor legibilidad */
+  }
+}
