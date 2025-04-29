@@ -409,84 +409,34 @@ body {
 .card.visible {
   opacity: 1;
 }
-/* Añade esto al final de tu CSS existente */
-
 @media (max-width: 768px) {
+  /* Contenedor principal con márgenes */
   body {
-    padding: 10px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alineación arriba para mejor scroll */
     min-height: 100vh;
-    height: auto;
+    padding: 25px 15px; /* Margen lateral reducido */
+    overflow-x: hidden;
   }
-  
-  .card {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 90vh; /* Ocupa casi toda la altura de la pantalla */
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  
-  .card[data-state="#about"] {
-    height: auto;
-    min-height: 90vh;
-  }
-  
-  .card[data-state="#contact"] {
-    height: auto;
-    min-height: 70vh;
-  }
-  
-  .card[data-state="#experience"] {
-    height: auto;
-    min-height: 90vh;
-  }
-  
-  .card-header {
-    height: 180px; /* Mantiene buena proporción para móviles */
-  }
-  
-  .card-cover {
-    height: 140px;
-  }
-  
-  .card-content {
-    padding: 15px;
-  }
-  
-  /* Asegura que el contenido no quede muy pegado a los bordes */
-  .card-main {
-    padding-bottom: 20px;
-  }
-  
-  /* Mejora los botones para pantallas táctiles */
-  .card-buttons button {
-    padding: 15px 10px;
-    font-size: 14px;
-  }
-}
 
-/* Para pantallas muy pequeñas (ej. smartphones pequeños) */
-@media (max-width: 480px) {
-  .card-header {
-    height: 160px;
+  /* Escalado + márgenes */
+  .card {
+    transform: scale(1.1) !important; /* Reduje a 1.1 (antes 1.2) */
+    transform-origin: center top;
+    width: 340px !important; /* Mantén el ancho original de PC */
+    margin: 25px auto !important; /* Margen superior y centrado */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
   }
-  
-  .card-cover {
-    height: 120px;
+
+  /* Asegura que las transformaciones dinámicas respeten el escalado */
+  .card.is-active {
+    transform: scale(1.05) !important; 
   }
-  
-  .card-fullname {
-    font-size: 20px;
-  }
-  
-  .card-jobtitle {
-    font-size: 11px;
-  }
-  
-  .card-desc {
-    font-size: 14px; /* Un poco más grande para mejor legibilidad */
+
+  /* Ajuste para popup (opcional) */
+  .popup-content {
+    width: 95% !important;
+    margin: 10% auto !important;
   }
 }
